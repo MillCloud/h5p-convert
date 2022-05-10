@@ -157,6 +157,9 @@ export default class H5pToScormController {
                 unsafeCleanup: true
             }
         );
+
+        await this.h5pEditor.deleteContent(contentId, user);
+
         return scormBuffer;
     }
 

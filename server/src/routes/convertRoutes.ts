@@ -50,9 +50,9 @@ export default function (
             const maxWidth = Number.parseInt(req.body.maxWidth, 10);
 
             const fileBuffer = req.files.file.data;
-            // console.log(fileBuffer);
+            // console.log(req.files.file);
 
-            const scormBuffer = await convertController.h5pToScorm(
+            const scorm = await convertController.h5pToScorm(
                 fileBuffer,
                 translationFunction,
                 {
@@ -68,10 +68,9 @@ export default function (
             res.writeHead(200, {
                 'Content-Type': 'application/octet-stream',
                 'Content-disposition': 'attachment;filename=scorm',
-                'Content-Length': scormBuffer.length
+                'Content-Length': scorm.length
             });
-            res.end(scormBuffer);
-            // res.status(200).end();
+            res.end(scorm);
         }
     );
 
