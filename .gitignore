@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.server
+
+# Compiled files
+build
+coverage
+dist
+
+# libraries
+!test/build
+
+# vscode
+.vscode
+.DS_Store
+microsoft.gpg
+
+# dev artifacts
+.eslintcache
+
+# Dependency directory
+node_modules
+/h5p/libraries
+
+h5p_libs
+google_translate.json
+.json-autotranslate-cache
+.dccache
