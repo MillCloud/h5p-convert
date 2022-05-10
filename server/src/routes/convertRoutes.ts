@@ -4,21 +4,16 @@ import * as _path from 'path';
 
 import Logger from '../helpers/Logger';
 import ConvertController from '../controllers/convertController';
-import H5PController from '../controllers/H5PController';
-import IServerConfig from '../config/IPaths';
 
 const log = new Logger('routes:h5p-to-scorm');
 
 export default function (
     h5pEditor: H5PEditor,
-    translationFunction: ITranslationFunction,
-    serverConfig: IServerConfig
+    translationFunction: ITranslationFunction
 ): express.Router {
     const router = express.Router();
 
     const convertController = new ConvertController(h5pEditor);
-
-    const h5pController = new H5PController(h5pEditor, serverConfig);
 
     router.post(
         `/h5p-to-scorm`,

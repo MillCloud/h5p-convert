@@ -146,7 +146,7 @@ export default function (
 
     router.use(
         '/api/v1/convert',
-        convertRoutes(h5pEditor, translationFunction, serverConfig)
+        convertRoutes(h5pEditor, translationFunction)
     );
 
     router.get('*', express.static(`${__dirname}/../../client`));
