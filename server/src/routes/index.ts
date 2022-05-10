@@ -27,6 +27,7 @@ import StateStorage from '../state/electronState';
 import { IFilePickers } from '../types';
 import FileHandleManager from '../state/FileHandleManager';
 import filesRoutes from './filesRoutes';
+import convertRoutes from './convertRoutes';
 
 const log = new Logger('routes');
 
@@ -141,6 +142,11 @@ export default function (
             fileHandleManager,
             translationFunction
         )
+    );
+
+    router.use(
+        '/api/v1/convert',
+        convertRoutes(h5pEditor, translationFunction, serverConfig)
     );
 
     router.get('*', express.static(`${__dirname}/../../client`));
