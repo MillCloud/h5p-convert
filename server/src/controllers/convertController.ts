@@ -65,7 +65,7 @@ export default class ConvertController {
             user
         );
 
-        const path = './hhhhhhtmp';
+        const path = './h5p-to-scorm';
         let scormBuffer = Buffer.alloc(0);
         await withDir(
             async ({ path: tmpDir }) => {
@@ -148,7 +148,7 @@ export default class ConvertController {
                     }
                 );
 
-                // console.log('tmp:', resolve(temporaryFilename)); // tmp: /Users/wangze/Project/Lumi/Agamotto_v1.0.0_2022-05-10.zip
+                // console.log('temporaryFilename: ', resolve(temporaryFilename)); // tmp: 项目根目录/Agamotto_v1.0.0_2022-05-10.zip
                 scormBuffer = await fs.readFile(temporaryFilename);
                 await fs.remove(temporaryFilename);
             },
