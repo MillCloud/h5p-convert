@@ -10,18 +10,20 @@ import IServerConfig from '../config/IPaths';
 // tslint:disable-next-line: variable-name
 const v0_8_0 = async () => {
     // If the workingCache (prior 0.8.0) still exists in userData remove it. -> https://github.com/Lumieducation/Lumi/pull/1727
+
+    const serverPaths = 'lumi';
     const deprecatedContentStoragePath = path.join(
-        process.env.USERDATA || app.getPath('userData'),
+        process.env.USERDATA || serverPaths,
         'workingCache'
     );
 
     const deprecatedTemporaryStoragePath = path.join(
-        process.env.USERDATA || app.getPath('userData'),
+        process.env.USERDATA || serverPaths,
         'tmp'
     );
 
     const deprecatedConfigPath = path.join(
-        process.env.USERDATA || app.getPath('userData'),
+        process.env.USERDATA || serverPaths,
         'config.json'
     );
 

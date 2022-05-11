@@ -164,7 +164,7 @@ export default class SettingsStorage {
 
             this.settings = {
                 ...defaultSettings,
-                language: app.getLocale()
+                language: 'en'
             };
             this.validateAndFixSettings(this.settings);
             saveSettings = true;
@@ -206,7 +206,7 @@ export default class SettingsStorage {
             );
             this.settings = {
                 ...defaultSettings,
-                language: app.getLocale()
+                language: 'en'
             };
             this.validateAndFixSettings(this.settings);
             saveSettings = true;

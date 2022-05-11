@@ -67,7 +67,9 @@
         "install:h5p-core": "sh scripts/install.sh 22115c0aeaa34faef5109c3f378add2d1647c837 c886fa6ded498bbe0148e9484f9b1534facc264e",
         "prepare": "husky install",
         "ci:all": "npm ci && (cd client && npm ci) && (cd reporter-client && npm ci)",
-        "localize": "json-autotranslate -d --directory-structure ngx-translate -c google_translate.json -s google-translate --decode-escapes -t key-based -i locales/lumi -m i18next && prettier --write \"locales/lumi/*.json\""
+        "localize": "json-autotranslate -d --directory-structure ngx-translate -c google_translate.json -s google-translate --decode-escapes -t key-based -i locales/lumi -m i18next && prettier --write \"locales/lumi/*.json\"",
+        "start:server:dev": "cross-env NODE_ENV=development DEBUG=lumi:* LOG_LEVEL=debug PORT=8080 node build/server/main.js",
+        "start:server": "cross-env DEBUG=lumi:* LOG_LEVEL=debug PORT=8080 node build/server/main.js"
     },
     "publishConfig": {
         "access": "restricted"

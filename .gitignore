@@ -31,3 +31,6 @@ h5p_libs
 google_translate.json
 .json-autotranslate-cache
 .dccache
+
+# tmp files
+lumi
