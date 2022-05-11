@@ -11,7 +11,7 @@ import HtmlExporter from '@lumieducation/h5p-html-exporter';
 import promisePipe from 'promisepipe';
 // import { resolve } from 'upath';
 
-const log = new Logger('controller:lumi-h5p-to-scorm');
+const log = new Logger('controller:lumi-convert');
 
 const t = i18next.getFixedT(null, 'lumi');
 
@@ -20,7 +20,7 @@ const cleanAndTrim = (text) => {
     return textClean.replace(/\s/g, '');
 };
 
-export default class H5pToScormController {
+export default class ConvertController {
     constructor(private h5pEditor: H5P.H5PEditor) {}
 
     public async h5pToScorm(
