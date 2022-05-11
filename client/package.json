@@ -9,6 +9,8 @@
         "@material-ui/styles": "4.11.5",
         "@sentry/browser": "6.19.6",
         "@sentry/react": "6.19.6",
+        "ajv": "8.11.0",
+        "ajv-keywords": "5.1.0",
         "clsx": "^1.1.1",
         "debug": "^4.3.4",
         "i18next": "21.6.15",
