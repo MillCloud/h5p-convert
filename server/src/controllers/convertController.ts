@@ -24,7 +24,7 @@ export default class ConvertController {
     constructor(private h5pEditor: H5P.H5PEditor) {}
 
     public async h5pToScorm(
-        buffer: Buffer,
+        h5pBuffer: Buffer,
         translationFunction: H5P.ITranslationFunction,
 
         options: {
@@ -39,7 +39,7 @@ export default class ConvertController {
         const user = new User();
 
         const { metadata, parameters } = await this.h5pEditor.uploadPackage(
-            buffer,
+            h5pBuffer,
             user
         );
 

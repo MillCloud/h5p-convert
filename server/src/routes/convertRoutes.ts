@@ -22,16 +22,11 @@ export default function (
                 any,
                 any,
                 {
-                    contentId: string;
-                    cssFileHandleId?: string;
-                    format: 'bundle' | 'external' | 'scorm';
-                    includeReporter: string;
                     marginX: string;
                     marginY: string;
                     masteryScore: string;
                     maxWidth: string;
                     restrictWidthAndCenter: string;
-                    showEmbed: string;
                     showRights: string;
                 }
             > & { files: any },
@@ -45,7 +40,6 @@ export default function (
             const maxWidth = Number.parseInt(req.body.maxWidth, 10);
 
             const fileBuffer = req.files.file.data;
-            // console.log(req.files.file);
 
             const scorm = await convertController.h5pToScorm(
                 fileBuffer,
@@ -62,7 +56,7 @@ export default function (
 
             res.writeHead(200, {
                 'Content-Type': 'application/octet-stream',
-                'Content-disposition': 'attachment;filename=scorm',
+                'Content-disposition': 'attachment;filename=scorm.zip',
                 'Content-Length': scorm.length
             });
             res.end(scorm);
