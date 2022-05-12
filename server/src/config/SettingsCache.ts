@@ -1,4 +1,3 @@
-import { app } from 'electron';
 import fsExtra from 'fs-extra';
 import { supportedLocales } from '../boot/i18n';
 
@@ -159,7 +158,7 @@ export default class SettingsStorage {
 
         if (!settingsOk) {
             log.debug(
-                `There was an error loading the settings file. Either none exists or it is malformed. Generating new file. locale: ${app.getLocale()}`
+                `There was an error loading the settings file. Either none exists or it is malformed. Generating new file. locale: en`
             );
 
             this.settings = {
@@ -202,7 +201,7 @@ export default class SettingsStorage {
 
         if (!settingsOk) {
             log.debug(
-                `There was an error loading the settings file. Either none exists or it is malformed. Generating new file. locale: ${app.getLocale()}`
+                `There was an error loading the settings file. Either none exists or it is malformed. Generating new file. locale: en`
             );
             this.settings = {
                 ...defaultSettings,
