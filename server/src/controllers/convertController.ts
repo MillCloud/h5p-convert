@@ -163,6 +163,31 @@ export default class ConvertController {
         return scormBuffer;
     }
 
+    public async readH5pFile(path: string): Promise<{
+        buffer: Buffer;
+        filenameWithoutExtension: string;
+    }> {
+        const filenameExtension = _path.extname(path);
+        if (filenameExtension !== '.h5p') {
+            throw new Error('not a h5p file');
+        }
+
+        const exists = await fs.pathExists(path);
+        if (!exists) {
+            throw new Error(`${path} not exists`);
+        }
+
+        const buffer = await fs.readFile(path);
+        const filenameWithoutExtension = _path.basename(
+            path,
+            _path.extname(path)
+        );
+        return {
+            buffer,
+            filenameWithoutExtension
+        };
+    }
+
     private getUbernameFromH5pJson(h5pJson: H5P.IContentMetadata): string {
         const library = (h5pJson.preloadedDependencies || []).find(
             (dependency) => dependency.machineName === h5pJson.mainLibrary
