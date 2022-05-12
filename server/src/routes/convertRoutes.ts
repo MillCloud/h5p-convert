@@ -22,6 +22,7 @@ export default function (
                 any,
                 any,
                 {
+                    filePath: string;
                     marginX: string;
                     marginY: string;
                     masteryScore: string;
@@ -29,7 +30,7 @@ export default function (
                     restrictWidthAndCenter: string;
                     showRights: string;
                 }
-            > & { files: any },
+            >,
             res
         ) => {
             const showRights = req.body.showRights === 'true';
@@ -39,9 +40,29 @@ export default function (
                 req.query.restrictWidthAndCenter === 'true';
             const maxWidth = Number.parseInt(req.body.maxWidth, 10);
 
-            const fileBuffer = req.files.file.data;
+            const filePath = req.body.filePath;
+            const masteryScore = req.body.masteryScore;
 
-            const scorm = await convertController.h5pToScorm(
+            if (typeof filePath !== 'string') {
+                return res.status(400).json({
+                    message: 'filePath is required',
+                    status: 400,
+                    error: {}
+                });
+            }
+            if (!['number', 'string'].includes(typeof masteryScore)) {
+                return res.status(400).json({
+                    message: 'masteryScore is required',
+                    status: 400,
+                    error: {}
+                });
+            }
+
+            const h5pFilePath = filePath.trim();
+            const { buffer: fileBuffer, filenameWithoutExtension } =
+                await convertController.readH5pFile(h5pFilePath);
+
+            const scormFile = await convertController.h5pToScorm(
                 fileBuffer,
                 translationFunction,
                 {
@@ -56,10 +77,10 @@ export default function (
 
             res.writeHead(200, {
                 'Content-Type': 'application/octet-stream',
-                'Content-disposition': 'attachment;filename=scorm.zip',
-                'Content-Length': scorm.length
+                'Content-disposition': `attachment;filename=${filenameWithoutExtension}.zip`,
+                'Content-Length': scormFile.length
             });
-            res.end(scorm);
+            res.end(scormFile);
         }
     );
 
