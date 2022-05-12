@@ -5,7 +5,7 @@ import * as _path from 'path';
 import Logger from '../helpers/Logger';
 import ConvertController from '../controllers/convertController';
 
-const log = new Logger('routes:h5p-to-scorm');
+const log = new Logger('routes:convert');
 
 export default function (
     h5pEditor: H5PEditor,
