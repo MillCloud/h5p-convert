@@ -63,6 +63,7 @@ export default function (
                 await convertController.readH5pFile(h5pFilePath);
 
             const scormFile = await convertController.h5pToScorm(
+                filenameWithoutExtension,
                 fileBuffer,
                 translationFunction,
                 {

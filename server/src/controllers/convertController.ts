@@ -24,6 +24,7 @@ export default class ConvertController {
     constructor(private h5pEditor: H5P.H5PEditor) {}
 
     public async h5pToScorm(
+        h5pFilename: string,
         h5pBuffer: Buffer,
         translationFunction: H5P.ITranslationFunction,
 
@@ -65,7 +66,7 @@ export default class ConvertController {
             user
         );
 
-        const path = './h5p-to-scorm';
+        const path = `./${h5pFilename}-${+new Date()}`;
         let scormBuffer = Buffer.alloc(0);
         await withDir(
             async ({ path: tmpDir }) => {
