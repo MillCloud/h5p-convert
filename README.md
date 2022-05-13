@@ -57,6 +57,10 @@ pm2 start npm --name h5p-convert -- run start
 }
 ```
 
+## 其他
+
+拉取代码太慢：<https://ineo6.github.io/hosts/>
+
 ## License
 
 This project is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE v3 License
