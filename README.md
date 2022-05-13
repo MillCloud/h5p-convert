@@ -15,7 +15,7 @@ $ cd h5p-convert
 # 安装依赖
 $ npm install
 
-# 运行
+# 构建
 $ npm run build
 
 # 默认运行在 8080 端口
