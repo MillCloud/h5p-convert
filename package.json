@@ -31,7 +31,7 @@
         "promisepipe": "3.0.0",
         "recursive-readdir": "2.2.2",
         "simple-scorm-packager": "0.2.7",
-        "socket.io": "4.4.1",
+        "socket.io": "4.5.1",
         "superagent": "7.1.6",
         "tmp-promise": "3.0.3",
         "upath": "2.0.1"
@@ -74,7 +74,7 @@
         "json-autotranslate": "1.10.2",
         "prettier": "2.7.1",
         "semantic-release": "19.0.3",
-        "socket.io-client": "4.4.1",
+        "socket.io-client": "4.5.1",
         "spectron": "19.0.0",
         "supertest": "6.2.3",
         "ts-jest": "27.1.5",
