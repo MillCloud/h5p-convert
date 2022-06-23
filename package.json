@@ -15,7 +15,7 @@
         "ajv-keywords": "5.1.0",
         "body-parser": "1.20.0",
         "debug": "4.3.4",
-        "electron-log": "4.4.7",
+        "electron-log": "4.4.8",
         "electron-updater": "5.0.5",
         "express": "4.18.1",
         "express-fileupload": "1.4.0",
