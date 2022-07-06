@@ -11,7 +11,7 @@
         "@sentry/react": "6.19.7",
         "ajv": "8.11.0",
         "ajv-keywords": "5.1.0",
-        "clsx": "1.2.0",
+        "clsx": "1.2.1",
         "debug": "4.3.4",
         "i18next": "21.8.11",
         "i18next-http-backend": "1.4.1",
