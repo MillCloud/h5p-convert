@@ -71,7 +71,7 @@
         "electron-notarize": "1.2.1",
         "husky": "7.0.4",
         "jest": "27.5.1",
-        "json-autotranslate": "1.10.2",
+        "json-autotranslate": "1.10.3",
         "prettier": "2.7.1",
         "semantic-release": "19.0.3",
         "socket.io-client": "4.5.1",
